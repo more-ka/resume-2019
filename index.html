@@ -132,14 +132,22 @@
 
     </ol>
   </section>
-  <section>
+  <section class="works">
     <h2>作品</h2>
     <nav>
-      <ol>
-        <li>所有</li>
-        <li>框架的</li>
-        <li>原生js&amp;css</li>
+      <ol class="clearfix">
+        <li id="worksAll">所有</li>
+        <li id="worksFrame">框架的</li>
+        <li id="worksNative">原生js&amp;css</li>
+        <div id="worksBer"class="ber status-1">
+          <div class="ber-inner"></div>
+        </div>
       </ol>
+      <div class="imgs">
+        <img class="big" src="./1.jpg" alt="">
+        <img class="small" src="./2.jpg" alt="">
+        <img class="small" src="./3.jpg" alt="">
+      </div>
     </nav>
     <div class="jobs">
 
@@ -147,5 +155,15 @@
   </section>
 </body>
 <script src="//at.alicdn.com/t/font_1121514_nsfji7rz9.js"></script>
-
+<script>
+  worksAll.onclick = function(){
+    worksBer.className = 'ber status-1'
+  }
+  worksFrame.onclick = function(){
+    worksBer.className = 'ber status-2'
+  }
+  worksNative.onclick = function(){
+    worksBer.className = 'ber status-3'
+  }
+</script>
 </html>
