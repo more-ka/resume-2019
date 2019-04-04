@@ -3,17 +3,27 @@
   padding: 0;
 }
 
-    .icon {
-       width: 1em; height: 1em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
-    }
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 
 .clearfix:after {
   content: '';
   display: block;
   clear: both;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
 
 .banner {
@@ -23,6 +33,11 @@
   background-position: center center;
   background-size: cover;
   overflow: hidden;
+}
+
+ol,
+ul {
+  list-style: none;
 }
 
 .banner>.mask {
@@ -82,15 +97,29 @@ ul>li>a:hover {
 }
 
 .userCard {
-  margin-top:-350px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-top: -350px;
+  margin-left: auto;
+  margin-right: auto;
   background: white;
-  max-width: 940px;box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+  max-width: 940px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
 }
-.userCard .pictureAndText{padding: 50px;display: inline-block;}
-.userCard .picture{float: left;}
-.userCard .text{float: left;width:474px;margin-left: 65px;}
+
+.userCard .pictureAndText {
+  padding: 50px;
+  display: inline-block;
+}
+
+.userCard .picture {
+  float: left;
+}
+
+.userCard .text {
+  float: left;
+  width: 474px;
+  margin-left: 65px;
+}
+
 .userCard .img {
   background: url(./avatar.jpg);
 }
@@ -114,47 +143,109 @@ ul>li>a:hover {
   top: 100%;
   left: 4px;
 }
-.userCard h1{
-  margin:16px 0 0 0;
+
+.userCard h1 {
+  margin: 16px 0 0 0;
 }
-.userCard .text hr{
-  margin:16px 0 20px 0;
+
+.userCard .text hr {
+  margin: 16px 0 20px 0;
 }
-hr{height:0;border:1px solid #dedede;}
+
+hr {
+  height: 0;
+  border: 1px solid #dedede;
+}
+
 .userCard .text dl dt,
-.userCard .text dl dt{
+.userCard .text dl dt {
   float: left;
 }
-.userCard .text dl dt{
-  width:30%;
+
+.userCard .text dl dt {
+  width: 30%;
   font-size: bold;
 }
-.userCard .text dl dd{
-  width:70%;
+
+.userCard .text dl dd {
+  width: 70%;
   color: #aaa9a9;
 }
-.userCard > footer{
-  background: #E6686A;text-align: center;
-}
-.userCard >footer a{display: inline-block;margin:16px;border-radius:50%;}
-.userCard footer a:hover{background: #cf5d5f;}
-.userCard > footer svg{
-  height: 24px; vertical-align: top;
-  width:24px;
-  fill: white;
-  padding:8px;
-}
-.download-wrapper{
-  margin: 32px;
+
+.userCard>footer {
+  background: #E6686A;
   text-align: center;
 }
-.download{
+
+.userCard>footer a {
   display: inline-block;
-  padding: 16px;
+  margin: 16px;
+  border-radius: 50%;
+}
+
+.userCard footer a:hover {
+  background: #cf5d5f;
+}
+
+.userCard>footer svg {
+  height: 24px;
+  vertical-align: top;
+  width: 24px;
+  fill: white;
+  padding: 8px;
+}
+
+.download-wrapper {
+  text-align: center;
+}
+
+.download {
+  display: inline-block;
+  padding: 24px;
   background: #ece9e9;
   color: black;
   font-weight: bold;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  margin: 48px;
 }
-.download:hover{
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+
+.download:hover {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.skills {
+  background: white;
+  max-width: 940px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  margin: 8px auto;
+  padding:32px 50px;
+  box-sizing: border-box;
+}
+
+.skills h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.skills ol li{
+  float: left;
+  width: 47%;
+  margin: 16px 0;
+}
+.skills ol li:nth-child(even){
+  float: right;
+}
+.skills .progressBer {
+  background: rgb(236, 160, 160);
+  height: 6px;
+  border-radius:2px;
+}
+
+.skills .progress {
+  background: #E6686A;
+  width: 75%;
+  height: 100%;
+  border-radius:2px;
 }
