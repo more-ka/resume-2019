@@ -13,10 +13,10 @@
   <div class="banner">
     <div class="mask"></div>
   </div>
-  <div class="topNavBar" >
+  <div id="topNavBer" class="topNavBar">
     <div class="logo"><span class="rs">Rs</span><span class="card">card</span></div>
     <nav>
-      <ul >
+      <ul>
         <li><a href="#">信息</a></li>
         <li><a href="#">教育经历</a></li>
         <li><a href="#">作品</a></li>
@@ -37,7 +37,7 @@
           <h1>combu</h1>
           <p>前端开发工程师</p>
           <hr>
-          <dl >
+          <dl>
             <dt>年龄</dt>
             <dd>20</dd>
             <dt>城市</dt>
@@ -139,7 +139,7 @@
         <li id="worksAll">所有</li>
         <li id="worksFrame">框架的</li>
         <li id="worksNative">原生js&amp;css</li>
-        <div id="worksBer"class="ber status-1">
+        <div id="worksBer" class="ber status-1">
           <div class="ber-inner"></div>
         </div>
       </ol>
@@ -156,14 +156,22 @@
 </body>
 <script src="//at.alicdn.com/t/font_1121514_nsfji7rz9.js"></script>
 <script>
-  worksAll.onclick = function(){
+  worksAll.onclick = function () {
     worksBer.className = 'ber status-1'
   }
-  worksFrame.onclick = function(){
+  worksFrame.onclick = function () {
     worksBer.className = 'ber status-2'
   }
-  worksNative.onclick = function(){
+  worksNative.onclick = function () {
     worksBer.className = 'ber status-3'
   }
+  window.onscroll = function () {
+    if (window.scrollY > 0) {
+      topNavBer.classList.add('sticky')
+    } else {
+      topNavBer.classList.remove('sticky')
+    }
+  }
 </script>
+
 </html>
