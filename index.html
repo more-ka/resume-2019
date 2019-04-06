@@ -17,18 +17,18 @@
     <div class="logo"><span class="rs">Rs</span><span class="card">card</span></div>
     <nav>
       <ul>
-        <li><a href="#">信息</a></li>
-        <li><a href="#">教育经历</a></li>
-        <li><a href="#">作品</a>
+        <li class="menuTrigger"><a href="#">信息</a></li>
+        <li class="menuTrigger"><a href="#">教育经历</a></li>
+        <li class="menuTrigger"><a href="#">作品</a>
           <div class="submenu">
-            <ol >
+            <ol>
               <li>作品1</li>
               <li>作品2</li>
               <li>作品3</li>
             </ol>
           </div>
         </li>
-        <li><a href="#">留言</a></li>
+        <li class="menuTrigger"><a href="#">留言</a></li>
       </ul>
     </nav>
   </div>
@@ -178,6 +178,15 @@
       topNavBer.classList.add('sticky')
     } else {
       topNavBer.classList.remove('sticky')
+    }
+  }
+  let liTags = document.getElementsByClassName('menuTrigger')
+  for (let i = 0; i < liTags.length; i++) {
+    liTags[i].onmouseenter = function (x) {
+      x.currentTarget.classList.add('active')
+    }
+    liTags[i].onmouseleave = function (x) {
+      x.currentTarget.classList.remove('active')
     }
   }
 </script>
