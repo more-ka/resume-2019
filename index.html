@@ -13,13 +13,14 @@
   <div class="banner">
     <div class="mask"></div>
   </div>
-  <div id="topNavBer" class="topNavBar">
+  <div id="topNavBer" class="topNavBer">
     <div class="logo"><span class="rs">Rs</span><span class="card">card</span></div>
     <nav>
       <ul>
-        <li class="menuTrigger"><a href="#">信息</a></li>
-        <li class="menuTrigger"><a href="#">教育经历</a></li>
-        <li class="menuTrigger"><a href="#">作品</a>
+        <li class="menuTrigger"><a href="#siteAbout">关于</a></li>
+        <li class="menuTrigger"><a href="#siteEdu">教育经历</a></li>
+        <li class="menuTrigger"><a href="#siteSkills">技能</a></li>
+          <li class="menuTrigger"><a href="#siteWorks">作品</a>
           <div class="submenu">
             <ol>
               <li>作品1</li>
@@ -33,7 +34,7 @@
     </nav>
   </div>
   <main>
-    <div class="userCard">
+    <div id="siteAbout" class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture">
           <img src="./avatar.jpg" alt="头像" width=299 height=347>
@@ -80,7 +81,7 @@
     <a class="download" href="./1.png" target="_blank" download>下载 pdf 简历</a>
   </p>
   <p></p>
-  <section class="skills">
+  <section id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -140,7 +141,7 @@
 
     </ol>
   </section>
-  <section class="works">
+  <section id="siteWorks" class="works">
     <h2>作品</h2>
     <nav>
       <ol class="clearfix">
@@ -189,6 +190,18 @@
       x.currentTarget.classList.remove('active')
     }
   }
+
+let aTags = document.querySelectorAll('div.topNavBer>nav>ul>li>a')
+for (let i=0;i<aTags.length;i++){
+  aTags[i].onclick = function(x){
+    x.preventDefault()
+    let a = x.currentTarget
+    let href = a.getAttribute('href')
+    let element = document.querySelector(href)
+    let top = element.offsetTop
+    window.scrollTo(0,top-80) //(x,y)
+  }
+}
 </script>
 
 </html>
