@@ -20,7 +20,7 @@
         <li class="menuTrigger"><a href="#siteAbout">关于</a></li>
         <li class="menuTrigger"><a href="#siteEdu">教育经历</a></li>
         <li class="menuTrigger"><a href="#siteSkills">技能</a></li>
-          <li class="menuTrigger"><a href="#siteWorks">作品</a>
+        <li class="menuTrigger"><a href="#siteWorks">作品</a>
           <div class="submenu">
             <ol>
               <li>作品1</li>
@@ -164,6 +164,7 @@
   </section>
 </body>
 <script src="//at.alicdn.com/t/font_1121514_nsfji7rz9.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
 <script>
   worksAll.onclick = function () {
     worksBer.className = 'ber status-1'
@@ -191,30 +192,35 @@
     }
   }
 
-let aTags = document.querySelectorAll('div.topNavBer>nav>ul>li>a')
-for (let i=0;i<aTags.length;i++){
-  aTags[i].onclick = function(x){
-    x.preventDefault()
-    let a = x.currentTarget
-    let href = a.getAttribute('href')
-    let element = document.querySelector(href)
-    let top = element.offsetTop
+  let aTags = document.querySelectorAll('div.topNavBer>nav>ul>li>a')
+  function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+  }
+  requestAnimationFrame(animate);
+  for (let i = 0; i < aTags.length; i++) {
+    aTags[i].onclick = function (x) {
+      x.preventDefault()
+      let a = x.currentTarget
+      let href = a.getAttribute('href')
+      let element = document.querySelector(href)
+      let top = element.offsetTop
+      let currentTop = window.scrollY //现在的位置
+      let targetTop = top - 80
+      let s = targetTop - currentTop
+      var coords = { y: currentTop };
+      let t = Math.abs((s / 100) * 300) //每移动100px耗费0.3s
+      if (t > 500) { t = 500 }
+      var tween = new TWEEN.Tween(coords)
+        .to({ y: targetTop }, t)
+        .easing(TWEEN.Easing.Quadratic.InOut)
+        .onUpdate(function () {
+          window.scrollTo(0, coords.y)
+        })
+        .start();
 
-    let n=20 //动多少次
-    let t = 500/n  //多久动一次
-    let currentTop = window.scrollY //现在的位置
-    let targetTop = top-80  //要去的位置
-    let s = (targetTop-currentTop)/20  //每次移动的距离
-    let id = setInterval(()=>{
-      if(i===n){
-        window.clearInterval(id)
-        return
-      }
-      i++
-      window.scrollTo(0,currentTop+s*i)
-    },t)
-
-}}
+    }
+  }
 </script>
 
 </html>
