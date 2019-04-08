@@ -101,7 +101,8 @@ ul>li>a {
     width:65%;
   }
 }
-ul>li.active a::before {
+ul>li.active a::before,
+ul>li.highlight a::before {
   content: '';
   height:3px;
   background: #E6686A;

@@ -34,7 +34,7 @@
     </nav>
   </div>
   <main>
-    <div id="siteAbout" class="userCard">
+    <div data-x id="siteAbout" class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture">
           <img src="./avatar.jpg" alt="头像" width=299 height=347>
@@ -81,7 +81,7 @@
     <a class="download" href="./1.png" target="_blank" download>下载 pdf 简历</a>
   </p>
   <p></p>
-  <section id="siteSkills" class="skills">
+  <section data-x id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -141,7 +141,7 @@
 
     </ol>
   </section>
-  <section id="siteWorks" class="works">
+  <section data-x id="siteWorks" class="works">
     <h2>作品</h2>
     <nav>
       <ol class="clearfix">
@@ -181,6 +181,25 @@
     } else {
       topNavBer.classList.remove('sticky')
     }
+  let specialTag = document.querySelectorAll('[data-x]')
+  let minIndex = 0
+  for(let i=1;i<specialTag.length;i++){
+    if(Math.abs(specialTag[i].offsetTop-window.scrollY) < Math.abs(specialTag[minIndex].offsetTop-window.scrollY)){
+      minIndex = i
+    }
+  }
+  for(let i=0;i<specialTag.length;i++){
+    specialTag[i].classList.remove('highlight')
+  }
+  specialTag[minIndex].classList.add('highlight')
+  let id = specialTag[minIndex].id
+  let a = document.querySelector('a[href="#'+ id +'"]')
+  let li = a.parentNode
+  let brother = li.parentNode.children
+  for(let i=0;i<brother.length;i++){
+    brother[i].classList.remove('highlight')
+  }
+  li.classList.add('highlight')
   }
   let liTags = document.getElementsByClassName('menuTrigger')
   for (let i = 0; i < liTags.length; i++) {
