@@ -44,7 +44,13 @@ ul {
   background-color: rgba(0, 0, 0, 0.5);
   height: 515px;
 }
-
+[data-x].offset{
+  transform: translateY(150px)
+}
+[data-x]{
+  transform: translateX(0);
+  transition: all 0.5s;
+}
 .topNavBer {
   display: block;
   position: fixed;
@@ -53,6 +59,7 @@ ul {
   width: 100%;
   padding: 16px;  color: grey;
   transition: all 0.5s;
+  z-index: 1;
 }
 .topNavBer.sticky{background: white;color: black;padding: 10px 16px 10px 16px;padding-top:9px;box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25)}
 .logo {
@@ -279,15 +286,16 @@ hr {
 .skills .progressBer {
   background: rgb(236, 160, 160);
   height: 6px;
-  border-radius:2px;
+  border-radius:2px;overflow: hidden;
 }
 
 .skills .progress {
   background: #E6686A;
   width: 75%;
   height: 100%;
-  border-radius:2px;
+  border-radius:2px;transform:translateX(0);transition: all 1s;
 }
+.skills.offset .progress{transform:translateX(-100%);}
 .works{padding:32px 10px 32px 10px;background: #EFEFEF;
     max-width: 940px;
     margin: 8px auto;

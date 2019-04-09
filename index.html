@@ -175,12 +175,21 @@
   worksNative.onclick = function () {
     worksBer.className = 'ber status-3'
   }
-  window.onscroll = function () {
+
+  let specialTag = document.querySelectorAll('[data-x]')
+  for(let i=0;i<specialTag.length;i++){
+    specialTag[i].classList.add('offset')
+  }
+ findclosest()
+  window.onscroll = function (x) {
     if (window.scrollY > 0) {
       topNavBer.classList.add('sticky')
     } else {
       topNavBer.classList.remove('sticky')
     }
+    findclosest()  
+}
+function findclosest(){
   let specialTag = document.querySelectorAll('[data-x]')
   let minIndex = 0
   for(let i=1;i<specialTag.length;i++){
@@ -188,10 +197,7 @@
       minIndex = i
     }
   }
-  for(let i=0;i<specialTag.length;i++){
-    specialTag[i].classList.remove('highlight')
-  }
-  specialTag[minIndex].classList.add('highlight')
+  specialTag[minIndex].classList.remove('offset')
   let id = specialTag[minIndex].id
   let a = document.querySelector('a[href="#'+ id +'"]')
   let li = a.parentNode
