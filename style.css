@@ -301,28 +301,10 @@ hr {
     margin: 64px auto;
     box-sizing: border-box;
   }
+  .works h2{
+    margin-bottom:48px;
+  }
 .works nav{text-align: center;}
-.works ol{display: inline-block;vertical-align: top;cursor: pointer;margin-bottom: 40px;}
-.works nav ol li{
-  float: left;
-}
-.works nav ol li:nth-child(2),
-.works nav ol li:nth-child(3){
-  margin-left: 40px;
-}
-.works .ber{height:6px;width:100%;background: white;border-radius:2px;}
-.works .ber .ber-inner{background: #e2000096;height:100%;margin-top: 28px;border-radius:2px;transition: all 0.3s;}
-.works .ber.status-1 .ber-inner{
-  width:14%;
-}
-.works .ber.status-2 .ber-inner{
-  margin-left: 70px;
-  width:22%;
-}
-.works .ber.status-3 .ber-inner{
-  margin-left: 160px;
-  width:34%;
-}
 .swiper-container {
   width: 800px;
   height: 450px;
