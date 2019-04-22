@@ -70,7 +70,7 @@ ul {
 }
 
 .logo>.rs {
-  color: red;
+  color: #e2000096;
   margin-right: 4px;
 }
 
@@ -112,7 +112,7 @@ ul>li.active a::before,
 ul>li.highlight a::before {
   content: '';
   height:3px;
-  background: #E6686A;
+  background: #e2000096;
   position: absolute;
   top:100%;
   left:20%;
@@ -171,7 +171,7 @@ ul>li.active>.submenu{
 
 .userCard .welcome {
   display: inline-block;
-  background: #e6686a;
+  background: #e2000096;
   color: white;
   padding: 4px 16px;
   line-height: 22px;
@@ -183,7 +183,7 @@ ul>li.active>.submenu{
   border: 10px solid transparent;
   width: 0px;
   border-top: 0;
-  border-left-color: #e6686a;
+  border-left-color: #e2000096;
   position: absolute;
   top: 100%;
   left: 4px;
@@ -218,7 +218,7 @@ hr {
 }
 
 .userCard>footer {
-  background: #E6686A;
+  background: #e2000096;
   text-align: center;
 }
 
@@ -290,15 +290,15 @@ hr {
 }
 
 .skills .progress {
-  background: #E6686A;
+  background: #e2000096;
   width: 75%;
   height: 100%;
   border-radius:2px;transform:translateX(0);transition: all 1s;
 }
 .skills.offset .progress{transform:translateX(-100%);}
-.works{padding:32px 10px 32px 10px;background: #EFEFEF;
+.works{padding-top:32px;background: #efefef;
     max-width: 940px;
-    margin: 8px auto;
+    margin: 64px auto;
     box-sizing: border-box;
   }
 .works nav{text-align: center;}
@@ -311,7 +311,7 @@ hr {
   margin-left: 40px;
 }
 .works .ber{height:6px;width:100%;background: white;border-radius:2px;}
-.works .ber .ber-inner{background: #E6686A;height:100%;margin-top: 28px;border-radius:2px;transition: all 0.3s;}
+.works .ber .ber-inner{background: #e2000096;height:100%;margin-top: 28px;border-radius:2px;transition: all 0.3s;}
 .works .ber.status-1 .ber-inner{
   width:14%;
 }
@@ -323,23 +323,19 @@ hr {
   margin-left: 160px;
   width:34%;
 }
-.works .imgs{
-  width: 920px;
-  height:576px;
-  position: relative;padding:0 15px;box-sizing: border-box;
+.swiper-container {
+  width: 800px;
+  height: 450px;
+}  
+.swiper-wrapper > div{
+  display: block;
 }
-.works .imgs img{
-  position: absolute;
+.swiper-wrapper>.img1{
+  background:  url(./nav.jpg) no-repeat center center;background-size: cover;
 }
-.works .imgs .big{
-  left:0;
-  top:0;
+.swiper-wrapper>.img2{
+  background:  url(./fm.jpg) no-repeat center center;background-size: cover;
 }
-.works .imgs .small{
-  right:0;
-  top:0;
-}
-.works .imgs .small:nth-child(2){
-  right:0;
-  top:297px;
+.swiper-wrapper>.img3{
+  background:  url(./canvas2.jpg) no-repeat center center;background-size: cover;
 }
