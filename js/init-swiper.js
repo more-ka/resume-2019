@@ -1,5 +1,7 @@
 !function(){
-  var mySwiper = new Swiper ('.swiper-container', {
+  var view = document.querySelector('.mySlides')
+ var contorller = function(view){
+  var mySwiper = new Swiper (view.querySelector('.swiper-container'), {
     loop: true, // 循环模式选项
     // 如果需要分页器
     pagination: {
@@ -11,4 +13,7 @@
       prevEl: '.swiper-button-prev',
     },
   }) 
+
+ }
+contorller.call(undefined,view)
 }.call()

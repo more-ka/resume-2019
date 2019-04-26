@@ -1,9 +1,26 @@
 !function(){
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 0) {
-        topNavBer.classList.add('sticky')
-      } else {
-        topNavBer.classList.remove('sticky')
-      }
-  })
+  var view = document.querySelector('#topNavBer')
+  var contorller = {
+    view: null,
+    init: function(view){
+      this.view = view
+      this.bindEvents()
+    },
+    bindEvents:function(){
+      window.addEventListener('scroll',()=>{
+        if (window.scrollY > 0) {
+            this.active()
+          } else {
+            this.deActive()
+          }
+      })
+    },
+    active: function(){
+      this.view.classList.add('sticky')
+    },
+    deActive: function(){
+      this.view.classList.remove('sticky')
+    }
+  }
+  contorller.init.call(contorller,view)
 }.call()
