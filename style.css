@@ -269,6 +269,7 @@ hr {
 }
 
 .skills h2,
+.message h2,
 .works h2{
   text-align: center;
   font-weight: bold;
@@ -320,4 +321,7 @@ hr {
 }
 .swiper-wrapper>.img3{
   background:  url(./img/canvas2.jpg) no-repeat center center;background-size: cover;
+}
+.message{
+  margin-bottom:500px;
 }
