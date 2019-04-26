@@ -1,3 +1,4 @@
+!function(){
   let liTags = document.getElementsByClassName('menuTrigger')
   for (let i = 0; i < liTags.length; i++) {
     liTags[i].onmouseenter = function (x) {
@@ -34,6 +35,6 @@
           window.scrollTo(0, coords.y)
         })
         .start();
-
     }
   }
+}.call()
