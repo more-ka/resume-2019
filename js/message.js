@@ -5,6 +5,20 @@ AV.init({
   appId: APP_ID,
   appKey: APP_KEY
 });
+var query = new AV.Query('Message');
+query.find().then(function (information) {
+  var array = information.map((item)=>item.attributes)
+  array.forEach((item)=>{
+    let li = document.createElement('li')
+    li.innerHTML = item.content
+    let messageList = document.querySelector('#messageList')
+    messageList.append(li)
+  })
+  })
+ 
+
+
+
 
 var myForm = document.querySelector('#messageForm')
 myForm.addEventListener('submit',(e)=>{
@@ -14,6 +28,6 @@ myForm.addEventListener('submit',(e)=>{
   var message = new message(); message.save({
     'content': content
   }).then(function(object) {
-    alert('LeanCloud Rocks!');
+    window.location.reload()
   })
 })
