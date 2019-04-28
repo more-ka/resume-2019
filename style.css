@@ -323,5 +323,16 @@ hr {
   background:  url(./img/canvas2.jpg) no-repeat center center;background-size: cover;
 }
 .message{
-  margin-bottom:500px;
+  margin: 0px auto;
+  max-width: 600px;
+  margin-bottom:100px;
+}
+.message > #messageList{
+}
+.message > #messageList >li{
+  border-bottom: 1px solid #ddd;
+  padding:16px 0;
+}
+.message > .messageForm{
+  margin:16px 0;
 }

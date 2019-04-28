@@ -10,24 +10,27 @@ query.find().then(function (information) {
   var array = information.map((item)=>item.attributes)
   array.forEach((item)=>{
     let li = document.createElement('li')
-    li.innerHTML = item.content
+    li.innerHTML = `${item.name}:  ${item.content}`
     let messageList = document.querySelector('#messageList')
     messageList.append(li)
   })
   })
  
-
-
-
-
 var myForm = document.querySelector('#messageForm')
 myForm.addEventListener('submit',(e)=>{
   e.preventDefault()
   let content = myForm.querySelector(['input[name=content]']).value
+  let name = myForm.querySelector('input[name=name]').value
   var message = AV.Object.extend('Message');
   var message = new message(); message.save({
+    'name':name,
     'content': content
   }).then(function(object) {
-    window.location.reload()
+    let li = document.createElement('li')
+    li.innerHTML = `${object.attributes.name}:  ${object.attributes.content}`
+    let messageList = document.querySelector('#messageList')
+    messageList.append(li)
+    myForm.querySelector(['input[name=content]']).value = ''
+    myForm.querySelector(['input[name=name]']).value = ''
   })
 })
