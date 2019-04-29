@@ -1,5 +1,5 @@
 !function(){
-  var view = document.querySelector('nav.menu')
+  var view = Find('nav.menu')
   var contorller = {
     view: null,
     init: function(view){

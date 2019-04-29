@@ -1,26 +1,6 @@
 !function(){
-  let view = document.querySelector('.message')
-  let model = {
-    init:function(){
-      var APP_ID = '9HOQuYpxQkbcsC81qKRHnKv3-gzGzoHsz'
-      var APP_KEY = 'NJr4FD0aO0zM4Pr48hM5VDcu'      
-      AV.init({ appId: APP_ID, appKey: APP_KEY })
-    },
-    fetch:function(){
-      var query = new AV.Query('Message');
-      return query.find()
-    },
-    save: function(name,content){
-      var message = AV.Object.extend('Message');
-        var message = new message(); 
-        if(name !== '' && content !== ''){return message.save({
-          'name':name,
-          'content': content
-        })
-        
-    }
-    }
-  }
+  let view = Find('.message')
+  var model = Model({resourceName:'Message'})
   let contorller = {
     view:null,
     model:null,
@@ -54,14 +34,17 @@
       let myForm = this.form
       let content = myForm.querySelector(['input[name=content]']).value
         let name = myForm.querySelector('input[name=name]').value
-        this.model.save(name,content).then((object)=>{
+        if(name !== '' && content !== ''){
+          this.model.save({'name':name,'content': content})
+        .then(function(object){
           let li = document.createElement('li')
           li.innerHTML = `${object.attributes.name}:  ${object.attributes.content}`
           let messageList = document.querySelector('#messageList')
           messageList.append(li)
           myForm.querySelector(['input[name=content]']).value = ''
           myForm.querySelector(['input[name=name]']).value = ''
-        })}
+        })
+        }}
     }
   
   contorller.init.call(contorller,view,model)

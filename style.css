@@ -325,7 +325,7 @@ hr {
 .message{
   margin: 0px auto;
   max-width: 600px;
-  margin-bottom:800px;
+  margin-bottom:360px;
 }
 .message > #messageList{
 }

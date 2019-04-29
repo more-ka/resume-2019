@@ -1,5 +1,5 @@
 !function(){
-  var view = document.querySelector('#topNavBer')
+  var view = Find('#topNavBer')
   var contorller = {
     view: null,
     init: function(view){

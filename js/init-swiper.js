@@ -1,5 +1,5 @@
 !function(){
-  var view = document.querySelector('.mySlides')
+  var view = Find('.mySlides')
  var contorller = function(view){
   var mySwiper = new Swiper (view.querySelector('.swiper-container'), {
     loop: true, // 循环模式选项
